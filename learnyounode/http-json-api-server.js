@@ -20,7 +20,10 @@ var server = http.createServer(function (request, response){
     }
     if(jsonTime){
       response.writeHead(200, {'Content-Type': 'application/json'});
-    response.end(JSON.stringify(jsonTime));
+      response.end(JSON.stringify(jsonTime));
+    }else {
+      res.writeHead(404);
+      res.end();
     }
 
 });
